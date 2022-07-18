@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="partition.js"></script>
+    <style>
+        div.a {
+            height: 35px;
+            border: 1px solid rgb(193, 214, 214);
+            vertical-align: middle;
+            margin: auto;
+            padding-top: 12px;
+        }
+        #component0 {
+            background-color: rgb(211, 211, 211,0.45);
+            color:rgb(10, 10, 10)
+        }
+        #component1 {
+            background-color: rgba(243, 242, 170, 0.555);
+            color:rgb(10, 10, 10)
+        }
+        #component2 {
+            background-color: rgb(211, 211, 211,0.45);
+            color:rgb(10, 10, 10)
+        }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .search-container {
+            padding-top: 12px;
+            padding-right: 15px;
+            float: right;
+        }
+    </style> 
+</head>
+<body><h3>Project ABCD - Partition Overview</h3>
+<div class="tab">
+    <button class="tablinks" onclick="onButtonClick(event, 'ALL')">All</button>
+    <button class="tablinks" onclick="onButtonClick(event, 'component0')">Component0</button>
+    <button class="tablinks" onclick="onButtonClick(event, 'component1')">Component1</button>
+    <button class="tablinks" onclick="onButtonClick(event, 'component2')">Component2</button>
+    <button class="tablinks" onclick="onButtonClick(event, 'component3')">Component3</button>
+    <div class="search-container">
+        <form action="searchBar">
+          <input id="search-bar" type="text" placeholder="Filter.." name="search" value="">
+        </form>
+    </div>
+</div>
+<div>
+    <div id="component0" class="partitionContainer">
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 A</div>
+        <div class="a">Hello Partition1 A</div>
+        <div class="a">Hello Partition1 A</div>
+        <div class="a">Hello Partition1 A</div>
+        <div class="a">Hello Partition1 A</div>
+        <div class="a">Deine Mudda</div>
+    </div>
+    <div id="component1" class="partitionContainer">
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+        <div class="a">Hello Partition1 B</div>
+    </div>
+    <div id="component2" class="partitionContainer">
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+        <div class="a">Hello Partition2 C</div>
+    </div>
+    <div id="component3" class="partitionContainer">
+    </div>
+</div>
+</body>
+<script>$('#search-bar').keyup(debounceSearch(searchBar,500));
+</script>
+</html>
